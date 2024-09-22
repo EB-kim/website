@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PDF Editor</h1>
+    <header>
+        <nav>
+            <a href="index.html" class="active">Upload</a>
+            <a href="edit.html">Edit</a>
+            <a href="convert.html">Convert</a>
+        </nav>
+    </header>
+
+    <div class="drag-area">
+        <p>Drag or upload your PDF File here</p>
+        <button id="chooseFile">Choose File</button>
+    </div>
+    
+    <input type="file" id="file-input" accept=".pdf" style="display: none;">
+
+    <script src="script.js"></script>
+</body>
+</html>

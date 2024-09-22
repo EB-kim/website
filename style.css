@@ -1,0 +1,335 @@
+h1 {
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    background-color: grey;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav {
+    display: inline-block;
+    background-color: #f1f1f1;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #ddd;
+}
+
+nav a.active {
+    background-color: #ccc;
+}
+
+.drag-area {
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    border: 2px dashed #ccc;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+}
+
+.drag-area:hover {
+    border-color: #999;
+    color: #333;
+}
+
+.drag-area p {
+    margin-bottom: 20px;
+}
+
+#chooseFile {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#chooseFile:hover {
+    background-color: #ddd;
+}
+
+.chooseFile {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chooseFile:hover {
+    background-color: #ddd;
+}
+
+.subheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.edit-container {
+    display: flex;
+    height: calc(100vh - 200px - 50px); /* Subtracting an additional 50px for the subheader */
+    overflow: hidden;
+}
+
+.left-panel {
+    width: 200px;
+    min-width: 100px;
+    max-width: 50%;
+    border-right: 1px solid #ccc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#thumbnails-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+#resize-handle {
+    width: 5px;
+    height: 100%;
+    background-color: #ccc;
+    cursor: ew-resize;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.right-panel {
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.resizer {
+    width: 10px;
+    height: 10px;
+    background: blue;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: se-resize;
+}
+
+#thumbnails-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumbnail {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.thumbnail img {
+    max-height: 150px;
+    border: 1px solid #ccc;
+}
+
+#pdf-viewer {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pdf-viewer canvas {
+    max-width: 100%;
+    height: auto; /* Change from max-height to height */
+    margin-bottom: 10px; /* Add space between pages */
+}
+
+.drag-area.active {
+    border-color: #000;
+    color: #000;
+}
+
+.thumbnail.active {
+    border: 2px solid #007bff;
+}
+
+#edit-subheader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Changed from space-between to flex-start */
+    gap: 5px; /* Reduced gap between elements */
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#edit-subheader select,
+#edit-subheader input,
+#edit-subheader button {
+    padding: 5px;
+    font-size: 14px;
+    margin-right: 5px; /* Added small right margin */
+}
+
+#edit-subheader button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#edit-subheader button:hover {
+    background-color: #e0e0e0;
+}
+
+.editable-text {
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    overflow: hidden;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.editable-text textarea {
+    font-family: inherit;
+    font-size: inherit;
+    padding: inherit;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    width: 100%;
+    height: 100%;
+}
+
+#edit-subheader button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#edit-subheader button:hover {
+    background-color: #e0e0e0;
+}
+
+.editable-text.selected {
+    border: 2px solid blue !important;
+}
+
+#zoom-in, #zoom-out {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#zoom-in:hover, #zoom-out:hover {
+    background-color: #e0e0e0;
+}
+
+/* Add styles for the custom scrollbar */
+.left-panel::-webkit-scrollbar {
+    width: 10px;
+}
+
+.left-panel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.left-panel::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.left-panel::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: transparent; /* Fully transparent */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Very light white border */
+    border-radius: 50%;
+}
+
+.resize-handle:hover {
+    background-color: rgba(0, 123, 255, 0.2); /* Slightly visible on hover */
+    border-color: rgba(255, 255, 255, 0.7); /* More visible border on hover */
+}
+
+.resize-handle.nw { top: -5px; left: -5px; cursor: nwse-resize; }
+.resize-handle.ne { top: -5px; right: -5px; cursor: nesw-resize; }
+.resize-handle.sw { bottom: -5px; left: -5px; cursor: nesw-resize; }
+.resize-handle.se { bottom: -5px; right: -5px; cursor: nwse-resize; }
+.resize-handle.n { top: -5px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.resize-handle.s { bottom: -5px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.resize-handle.e { top: 50%; right: -5px; transform: translateY(-50%); cursor: ew-resize; }
+.resize-handle.w { top: 50%; left: -5px; transform: translateY(-50%); cursor: ew-resize; }
+
+#download-pdf {
+    background-color: #4CAF50;
+    color: black;  /* Changed from white to black */
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: auto; /* Push to the right */
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#download-pdf:hover {
+    background-color: #45a049;
+}

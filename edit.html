@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PDF Editor</h1>
+    <header>
+        <nav>
+            <a href="index.html">Upload</a>
+            <a href="#" id="edit-tab" class="active">Edit</a>
+            <a href="convert.html">Convert</a>
+        </nav>
+    </header>
+    
+    <div class="edit-container">
+        <div class="left-panel">
+            <div id="thumbnails-container">
+                <!-- Thumbnails will be added here -->
+            </div>
+            <div id="resize-handle"></div>
+        </div>
+        <div class="right-panel">
+            <div id="edit-subheader" class="subheader">
+                <select id="font-style">
+                    <option value="Arial">Arial</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier">Courier</option>
+                </select>
+                <select id="font-size">
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                </select>
+                <input type="color" id="font-color" value="#000000">
+                <button id="add-text">Add Text</button>
+                <button id="remove-text">Remove Text</button>
+                <button id="download-pdf">Download PDF</button>
+            </div>
+            <div id="pdf-viewer">
+                <!-- PDF pages will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js"></script>
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    
+    <script src="edit.js"></script>
+</body>
+</html>
+
